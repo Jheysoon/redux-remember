@@ -56,6 +56,11 @@ export const loadAllKeyed = async ({
   }, {});
 };
 
+function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+
 export const rehydrate = async (
   store: Store,
   rememberedKeys: string[],
@@ -67,6 +72,7 @@ export const rehydrate = async (
     errorHandler
   }: RehydrateOptions
 ) => {
+  await delay(300)
   let state = store.getState();
 
   try {
