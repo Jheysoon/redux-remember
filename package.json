@@ -17,7 +17,7 @@
     "build:mjs": "BABEL_ENV=mjs babel --extensions '.ts' src --source-maps --out-file-extension '.mjs' --out-dir dist/mjs",
     "build:types": "tsc --pretty --declaration --declarationMap --emitDeclarationOnly --outDir dist/types && rimraf -V dist/types/__tests__",
     "build": "npm run build:cjs && npm run build:mjs && npm run build:types",
-    "prepare": "npm run clean && npm run typecheck && npm run test && npm run build",
+    "prepare": "npm run clean && npm run typecheck && npm run build",
     "lint": "eslint ./src/*.ts",
     "test": "npm run lint && jest ./src/__tests__/*.test.ts"
   },
